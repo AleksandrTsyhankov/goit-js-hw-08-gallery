@@ -64,7 +64,7 @@ export default [
   },
 ];
 
-import * as arr from '../src/gallery-items.js'
+import * as arr from './gallery-items.js'
 let index = 0;
 const allOriginalImages = arr.default.map(element => element.original)
 const allOriginalImagesDescriprion = arr.default.map(element => element.description)
@@ -77,7 +77,7 @@ const overlayImage = document.querySelector('img.lightbox__image')
 imagesGallery.addEventListener('click', onImageClickZoom)
 imagesGallery.addEventListener('keydown', onClickEscKeyClose)
 lightbox.addEventListener('click', onMouseClickClose)
-window.addEventListener('keydown', _.debounce(onArrowPress), 300)
+window.addEventListener('keydown', onArrowPress)
 createGallery(arr)
 
 function createGallery(arr) {
